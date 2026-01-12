@@ -7,7 +7,7 @@ import { PerfumeViewModel } from '../viewmodel/PerfumeViewModel';
 @Component
 struct Index {
   scroller: Scroller = new Scroller()
-  @State searchInput: string = '';
+  searchInput: string = '';
   @State filteredPerfumesList: Array<Perfume> = []
   private viewModel: PerfumeViewModel = new PerfumeViewModel();
 
@@ -31,14 +31,22 @@ struct Index {
 
       Scroll(this.scroller) {
         Column() {
-          ForEach(this.filteredPerfumesList, (perfume: Perfume) => {
-            PerfumeComponent({
-              name: perfume.name,
-              image: perfume.image,
-              category: perfume.category
-            }).padding({ bottom: 4 })
-            Divider().height(2).color(Color.Gray).padding({ left: 40, right: 40, bottom: 10 });
-          })
+          ForEach(
+            this.filteredPerfumesList,
+            (perfume: Perfume) => {
+              PerfumeComponent({
+                name: perfume.name,
+                image: perfume.image,
+                category: perfume.category
+              })
+                .padding({ bottom: 4 })
+              Divider()
+                .height(2)
+                .color(Color.Gray)
+                .padding({ left: 40, right: 40, bottom: 10 })
+            },
+            (perfume: Perfume) => perfume.name
+          )
         }.padding({ bottom: 25 })
       }.width('100%').height('100%')
     }.backgroundColor('#ffd4c890').padding({ top: 10, bottom: 10 }).width('100%').height('100%')

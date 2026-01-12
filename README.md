@@ -1,11 +1,13 @@
 > **Note:** To access all shared projects, get information about environment setup, and view other guides, please visit [Explore-In-HMOS-Wearable Index](https://github.com/Explore-In-HMOS-Wearable/hmos-index).
 
-# How to Search an Item
+# How to Search an Item?
 
 This project demonstrates how to search the items for the HarmonyOS Next apps
 
 # Preview
+<div>
 <img src="./screenshots/output.png" width="25%"/>
+</div>
 
 # Use Cases
 **Search**: The user can search an item in the search box
